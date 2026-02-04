@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
+import { ANIMATION, SECTION_IDS } from '@/config/defaults';
 
 export const HeroSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -16,26 +17,26 @@ export const HeroSection = () => {
     if (!isLoaded || !containerRef.current) return;
 
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+      const tl = gsap.timeline({ defaults: { ease: ANIMATION.easings.default } });
 
       tl.fromTo('.hero-name', 
         { opacity: 0, y: 50 },
-        { opacity: 1, y: 0, duration: 1 }
+        { opacity: 1, y: 0, duration: ANIMATION.durations.hero.name }
       )
       .fromTo('.hero-title',
         { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.8 },
-        '-=0.5'
+        { opacity: 1, y: 0, duration: ANIMATION.durations.hero.title },
+        ANIMATION.overlap.large
       )
       .fromTo('.hero-tagline',
         { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.8 },
-        '-=0.4'
+        { opacity: 1, y: 0, duration: ANIMATION.durations.hero.tagline },
+        ANIMATION.overlap.medium
       )
       .fromTo('.hero-scroll',
         { opacity: 0 },
-        { opacity: 1, duration: 0.6 },
-        '-=0.2'
+        { opacity: 1, duration: ANIMATION.durations.hero.scroll },
+        ANIMATION.overlap.small
       );
     }, containerRef);
 
@@ -44,7 +45,7 @@ export const HeroSection = () => {
 
   return (
     <section 
-      id="hero" 
+      id={SECTION_IDS[0]} 
       ref={containerRef}
       className="relative min-h-screen flex flex-col items-center justify-center px-6"
     >

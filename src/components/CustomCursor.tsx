@@ -2,8 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useScrollProgress } from '@/hooks/useScrollProgress';
-
-type CursorState = 'default' | 'hover' | 'link' | 'project' | 'assistant' | 'text';
+import { type CursorState, SCROLL, BREAKPOINTS } from '@/config/defaults';
 
 interface Position {
   x: number;
@@ -25,8 +24,8 @@ export const CustomCursor = () => {
   useEffect(() => {
     const animate = () => {
       setDelayedPosition(prev => ({
-        x: prev.x + (targetRef.current.x - prev.x) * 0.15,
-        y: prev.y + (targetRef.current.y - prev.y) * 0.15,
+        x: prev.x + (targetRef.current.x - prev.x) * SCROLL.smoothness,
+        y: prev.y + (targetRef.current.y - prev.y) * SCROLL.smoothness,
       }));
       rafRef.current = requestAnimationFrame(animate);
     };
@@ -84,7 +83,7 @@ export const CustomCursor = () => {
   // Hide on mobile
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    const checkMobile = () => setIsMobile(window.innerWidth < BREAKPOINTS.mobile);
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);

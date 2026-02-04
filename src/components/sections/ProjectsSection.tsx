@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { X } from 'lucide-react';
+import { SECTION_IDS } from '@/config/defaults';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -134,7 +135,7 @@ export const ProjectsSection = () => {
   return (
     <>
       <section 
-        id="projects" 
+        id={SECTION_IDS[3]} 
         ref={containerRef}
         className="relative min-h-screen overflow-hidden"
       >

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { SCROLL } from '@/config/defaults';
 
 export const useScrollProgress = () => {
   const [progress, setProgress] = useState(0);

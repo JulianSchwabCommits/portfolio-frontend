@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import { SCROLL } from '@/config/defaults';
 
 export const useSectionObserver = (sectionIds: string[]) => {
   const [activeSection, setActiveSection] = useState(sectionIds[0]);
@@ -10,7 +11,7 @@ export const useSectionObserver = (sectionIds: string[]) => {
   useEffect(() => {
     const options = {
       root: null,
-      rootMargin: '-20% 0px -60% 0px',
+      rootMargin: SCROLL.intersectionRootMargin,
       threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
     };
 
@@ -23,7 +24,7 @@ export const useSectionObserver = (sectionIds: string[]) => {
           [id]: entry.intersectionRatio,
         }));
 
-        if (entry.isIntersecting && entry.intersectionRatio > 0.2) {
+        if (entry.isIntersecting && entry.intersectionRatio > SCROLL.intersectionThreshold) {
           setActiveSection(id);
         }
       });

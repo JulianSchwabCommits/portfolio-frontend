@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ANIMATION, SECTION_IDS } from '@/config/defaults';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,8 +47,8 @@ export const NowSection = () => {
         {
           opacity: 1,
           y: 0,
-          duration: 0.8,
-          stagger: 0.15,
+          duration: ANIMATION.durations.slow,
+          stagger: ANIMATION.stagger.short,
           scrollTrigger: {
             trigger: '.now-grid',
             start: 'top 80%',
@@ -62,7 +63,7 @@ export const NowSection = () => {
 
   return (
     <section 
-      id="now" 
+      id={SECTION_IDS[5]} 
       ref={containerRef}
       className="relative min-h-screen section-padding px-6"
     >

@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { SECTION_IDS, ANIMATION } from '@/config/defaults';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -52,8 +53,8 @@ export const OriginSection = () => {
         {
           opacity: 1,
           x: 0,
-          duration: 0.8,
-          stagger: 0.2,
+          duration: ANIMATION.durations.slow,
+          stagger: ANIMATION.stagger.medium,
           scrollTrigger: {
             trigger: '.origin-list',
             start: 'top 80%',
@@ -68,7 +69,7 @@ export const OriginSection = () => {
         {
           opacity: 1,
           y: 0,
-          duration: 1,
+          duration: ANIMATION.durations.slow,
           scrollTrigger: {
             trigger: '.origin-text',
             start: 'top 85%',
@@ -83,7 +84,7 @@ export const OriginSection = () => {
 
   return (
     <section 
-      id="origin" 
+      id={SECTION_IDS[1]} 
       ref={containerRef}
       className="relative min-h-screen section-padding px-6 overflow-hidden"
     >

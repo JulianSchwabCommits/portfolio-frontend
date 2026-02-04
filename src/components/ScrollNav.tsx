@@ -2,14 +2,15 @@
 
 import { useSectionObserver } from '@/hooks/useSectionObserver';
 import { useScrollProgress } from '@/hooks/useScrollProgress';
+import { SECTION_IDS } from '@/config/defaults';
 
 const sections = [
-  { id: 'hero', label: 'Home' },
-  { id: 'origin', label: 'Origin' },
-  { id: 'learning', label: 'Learning' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'work', label: 'Work' },
-  { id: 'now', label: 'Now' },
+  { id: SECTION_IDS[0], label: 'Home' },
+  { id: SECTION_IDS[1], label: 'Origin' },
+  { id: SECTION_IDS[2], label: 'Learning' },
+  { id: SECTION_IDS[3], label: 'Projects' },
+  { id: SECTION_IDS[4], label: 'Work' },
+  { id: SECTION_IDS[5], label: 'Now' },
 ];
 
 export const ScrollNav = () => {
