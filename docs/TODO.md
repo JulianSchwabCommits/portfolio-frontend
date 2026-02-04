@@ -2,11 +2,6 @@
 
 ## High Priority
 
-1. **Missing `src/config/defaults.ts` file**
-   - Mentioned in instructions but doesn't exist
-   - Critical for avoiding hardcoded values across components
-   - Should include section IDs, cursor states, animation timings, breakpoints
-
 2. **No cursor context implementation**
    - Instructions reference "cursor context" but it's not in the workspace
    - Need `src/contexts/CursorContext.tsx` with provider and hook

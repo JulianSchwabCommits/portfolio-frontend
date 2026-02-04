@@ -211,5 +211,4 @@
 
    * Always create a new branch for each feature: `feat/feature-name`, `fix/bug-name`, `refactor/scope`
    * Use conventional commit messages: `feat:`, `fix:`, `refactor:`, `docs:`, `test:`, `chore:`
-   * Keep commit messages short but understandable
-   * Or include brief reasoning for decisions
+   * Keep commit messages short but understandable, one short sentence and NO body.
