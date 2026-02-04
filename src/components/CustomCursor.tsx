@@ -18,7 +18,7 @@ export const CustomCursor = () => {
   const [isPressed, setIsPressed] = useState(false);
   const { velocity } = useScrollProgress();
   
-  const rafRef = useRef<number>();
+  const rafRef = useRef<number>(0);
   const targetRef = useRef<Position>({ x: 0, y: 0 });
 
   // Smooth follow animation
