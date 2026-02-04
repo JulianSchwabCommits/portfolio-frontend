@@ -68,30 +68,6 @@
 
 ---
 
-##  Development Workflow
-
-### Running
-Always first check if its already running by e.g curl -I http://127.0.0.1:3000 and if nothing is on there then do
-```bash
-npm run dev          
-``` 
-and use the mcp tools to open the website and look at the website to review implementation.
-
-when you are finished implementing a feature run 
-```bash
-npm run build 
-```
-to check if everything works.
-and also run 
-```bash
-npm run lint
-npm run test:watch          
-```
-to see if all tests suceed.
-
-Here’s a cleaner, more precise, and directive way to write that section for Copilot instructions. I’ve kept the **“check first, verify after”** approach and made it readable while keeping it action-oriented:
-
----
 
 ## Development Workflow
 
@@ -230,3 +206,10 @@ Here’s a cleaner, more precise, and directive way to write that section for Co
 * All docs should be **minimal, clear, and direct**.
 * No extra sections, explanations, or emojis.
 * Only include the **necessary commands, file lists, what exactly that does or brief descriptions**.
+
+9. **Git Workflow**
+
+   * Always create a new branch for each feature: `feat/feature-name`, `fix/bug-name`, `refactor/scope`
+   * Use conventional commit messages: `feat:`, `fix:`, `refactor:`, `docs:`, `test:`, `chore:`
+   * Keep commit messages short but understandable
+   * Or include brief reasoning for decisions
