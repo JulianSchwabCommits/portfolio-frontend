@@ -224,3 +224,9 @@ Here’s a cleaner, more precise, and directive way to write that section for Co
    * All errors should throw
    * No silent fails
    * Always bubble up exceptions
+
+8. **Documentation Style**
+
+* All docs should be **minimal, clear, and direct**.
+* No extra sections, explanations, or emojis.
+* Only include the **necessary commands, file lists, what exactly that does or brief descriptions**.
